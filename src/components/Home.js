@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import "../App.css"
 
 const Home = () => {
+    const [data, setData] = useState([]);
+    useEffect(() => {
+      let result = JSON.parse(localStorage.getItem("scenarios"));
+      setData(result);
+      console.log(result);
+    },[]);
+  
   return (
     <div>
       <div className='main-bg p-4'>
@@ -11,7 +19,7 @@ const Home = () => {
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Scenario import { } from 'module'</th>
+                                        <th scope="col">Scenario </th>
                                         <th scope="col">Scenario Name</th>
                                         <th scope="col">Scenario Time</th>
                                         <th scope="col">Number of Vehicles</th>
@@ -21,24 +29,26 @@ const Home = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
+                                {data.map((item, index) => {
+                    return (
+                      <tr>
+                        <th scope="row">{item.id}</th>
+                        <td>{item.name}</td>
+                        <td>{item.time}</td>
+                        <td>0</td>
+                        <td>
+                          <button>add</button>
+                        </td>
+                        <td>
+                          <button>edit</button>
+                        </td>
+                        <td>
+                          <button>delete</button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+
                                 </tbody>
                             </table>
                         </div>

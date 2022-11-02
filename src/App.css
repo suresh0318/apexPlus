@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+.sidebar {
+  padding-top: 8rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100vh;
+  width: 20vw;
+  background: #a4bcd5;
+  font-weight: 500;
+}
+.item {
+
+  color: inherit;
+  text-decoration: none;
+  margin-top: 0.7rem;
+  color: black;
+  font-size: 20px;
+  padding: 10px;
+}
+body {
+  margin: 0;
+  background: #ecf0f1;
+}
+.main-bg{
+  padding: 1rem;
+  width: 80vw;
+  height: 100vh;
+  position: absolute;
+  left: 20vw;
+  top: 0;
+    background-color: black;
+    color: white;
+}
+.sub-bg{
+  background-color: rgb(54, 51, 51);
+  margin-bottom: 50px !important;
+}
+.Add-btn1{
+  background-color: green;
+  border: none;
+  border-radius: 03px;
   color: white;
+  padding: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.Add-btn2{
+  background-color: orange;
+  border: none;
+  border-radius: 03px;
+  color: white;
+  padding: 10px;
+  margin: 0 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Add-btn3{
+  background-color: rgb(57, 178, 229);
+  border: none;
+  border-radius: 03px;
+  color: white;
+  padding: 10px;
+}
+.form-bg{
+background-color: black;
+border: none;
+}
+.Scenarios-btn{
+  float: right;
+  margin-top: -24px;
+}
+.Home-btn {
+  float: right;
+}
+.active{
+  background-color: white;
+}
+input{
+  color: white;
 }
