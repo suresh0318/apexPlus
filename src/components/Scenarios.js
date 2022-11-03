@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../App.css";
 
 const Scenarios = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   useEffect(() => {
     let result = JSON.parse(localStorage.getItem("scenarios"));
     setData(result);
@@ -34,7 +34,7 @@ const Scenarios = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {data.map((item, index) => {
+                  {data?.map((item, index) => {
                     return (
                       <tr>
                         <th scope="row">{item.id}</th>
