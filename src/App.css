@@ -74,3 +74,77 @@ border: none;
 input{
   color: white;
 }
+
+
+
+
+
+import React, { useState } from "react";
+
+const MultiDropdownForm = () => {
+  const [dropdown1Value, setDropdown1Value] = useState("");
+  const [dropdown2Value, setDropdown2Value] = useState("");
+  const [inputValue, setInputValue] = useState("");
+
+  const handleDropdown1Change = (e) => {
+    setDropdown1Value(e.target.value);
+  };
+
+  const handleDropdown2Change = (e) => {
+    setDropdown2Value(e.target.value);
+  };
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  return (
+    <div className="container mt-5">
+      <h1>Multi Dropdown Form</h1>
+      <div className="form-group">
+        <label htmlFor="dropdown1">Dropdown 1:</label>
+        <select
+          id="dropdown1"
+          className="form-control"
+          value={dropdown1Value}
+          onChange={handleDropdown1Change}
+        >
+          <option value="">Select an option</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+      </div>
+      <div className="form-group">
+        <label htmlFor="dropdown2">Dropdown 2:</label>
+        <select
+          id="dropdown2"
+          className="form-control"
+          value={dropdown2Value}
+          onChange={handleDropdown2Change}
+        >
+          <option value="">Select an option</option>
+          <option value="optionA">Option A</option>
+          <option value="optionB">Option B</option>
+          <option value="optionC">Option C</option>
+        </select>
+      </div>
+      <div className="form-group">
+        <label htmlFor="input">Input:</label>
+        <input
+          id="input"
+          type="text"
+          className="form-control"
+          value={inputValue}
+          onChange={handleInputChange}
+        />
+      </div>
+      <h2>Selected Values:</h2>
+      <p>Dropdown 1: {dropdown1Value}</p>
+      <p>Dropdown 2: {dropdown2Value}</p>
+      <p>Input: {inputValue}</p>
+    </div>
+  );
+};
+
+export default MultiDropdownForm;
